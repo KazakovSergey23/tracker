@@ -4,10 +4,6 @@ public class Cat {
     private String food;
     private String name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void show() {
         System.out.println("Имя котика: " + this.name + "\nОн ел: " + this.food);
     }
