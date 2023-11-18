@@ -25,11 +25,11 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        System.out.println("Статический метод: "  + Calculator.minus(10));
-        System.out.println("Статический метод: "  + Calculator.sum(10));
-        System.out.println("Нестатический метод: "  + calculator.multiply(4));
-        System.out.println("Нестатический метод: "  + calculator.divide(10));
-        System.out.println("Нестатический метод: "  + calculator.sumAllOperation(4));
+        System.out.println("Статический метод вычитания: "  + Calculator.minus(10));
+        System.out.println("Статический метод суммы: "  + Calculator.sum(10));
+        System.out.println("Нестатический метод умножения: "  + calculator.multiply(4));
+        System.out.println("Нестатический метод деления: "  + calculator.divide(10));
+        System.out.println("Нестатический метод суммы всех операций: "  + calculator.sumAllOperation(4));
     }
 
 }
