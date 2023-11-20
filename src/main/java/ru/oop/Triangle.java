@@ -2,9 +2,9 @@ package ru.oop;
 
 import static java.lang.Math.sqrt;
 public class Triangle {
-    private Point first;
-    private Point second;
-    private Point third;
+    private final Point first;
+    private final Point second;
+    private final Point third;
 
     public Triangle(Point first, Point second, Point third) {
         this.first = first;
