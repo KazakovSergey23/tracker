@@ -11,24 +11,23 @@ public class Library {
         books[1] = book2;
         books[2] = book3;
         books[3] = book4;
-        for (Book c: books) {
-            System.out.println(c.getName() + " - " + c.getPages());
+        for (Book book: books) {
+            System.out.println(book.getName() + " - " + book.getPages());
         }
-        Book book;
-        book = books[0];
+        Book rev;
+        rev = books[0];
         books[0] = books[3];
-        books[3] = book;
+        books[3] = rev;
         System.out.println("___");
-        for (Book c: books) {
-            System.out.println(c.getName() + " - " + c.getPages());
+        for (Book book: books) {
+            System.out.println(book.getName() + " - " + book.getPages());
         }
         System.out.println("___");
-        for (Book c: books) {
-            if (c != null) {
-                if (c.getName().equals("Clean code")) {
-                    System.out.println(c.getName() + " - " + c.getPages());
+        for (Book book: books) {
+                if ("Clean code".equals(book.getName())) {
+                    System.out.println(book.getName() + " - " + book.getPages());
                 }
-            }
+
         }
     }
 }
