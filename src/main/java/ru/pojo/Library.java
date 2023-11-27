@@ -12,16 +12,22 @@ public class Library {
         books[2] = book3;
         books[3] = book4;
         for (Book c: books) {
-            System.out.println(c.getName() + " - " + c.getPage());
+            System.out.println(c.getName() + " - " + c.getPages());
         }
-        books[0] = book4;
-        books[3] = book1;
+        Book book;
+        book = books[0];
+        books[0] = books[3];
+        books[3] = book;
+        System.out.println("___");
         for (Book c: books) {
-            System.out.println(c.getName() + " - " + c.getPage());
+            System.out.println(c.getName() + " - " + c.getPages());
         }
+        System.out.println("___");
         for (Book c: books) {
-            if (c.getName().equals("Clean code")) {
-                System.out.println(c.getName() + " - " + c.getPage());
+            if (c != null) {
+                if (c.getName().equals("Clean code")) {
+                    System.out.println(c.getName() + " - " + c.getPages());
+                }
             }
         }
     }
