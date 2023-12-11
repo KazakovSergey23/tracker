@@ -52,13 +52,7 @@ public class License {
 
         License license = (License) o;
 
-        if (!Objects.equals(owner, license.owner)) {
-            return false;
-        }
-        if (!Objects.equals(model, license.model)) {
-            return false;
-        }
-        if (!Objects.equals(code, license.code)) {
+        if (!Objects.equals(model, license.model) && !Objects.equals(owner, license.owner) && !Objects.equals(code, license.code)) {
             return false;
         }
         return Objects.equals(created, license.created);
