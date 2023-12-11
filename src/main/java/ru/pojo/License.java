@@ -49,13 +49,7 @@ public class License {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-
-        License license = (License) o;
-
-        if (!Objects.equals(model, license.model) && !Objects.equals(owner, license.owner) && !Objects.equals(code, license.code)) {
-            return false;
-        }
-        return Objects.equals(created, license.created);
+        return this.model.equals(((License) o).model) && this.owner.equals(((License) o).owner) && this.code.equals(((License) o).code);
     }
 
     @Override
