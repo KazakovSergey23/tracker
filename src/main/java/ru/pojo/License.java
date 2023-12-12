@@ -41,7 +41,6 @@ public class License {
         this.created = created;
     }
 
-    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -49,16 +48,20 @@ public class License {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        return this.model.equals(((License) o).model) && this.owner.equals(((License) o).owner) && this.code.equals(((License) o).code);
+        License license = (License) o;
+        return Objects.equals(owner, license.owner)
+                && Objects.equals(model, license.model)
+                && Objects.equals(code, license.code)
+                && Objects.equals(created, license.created);
     }
 
-    @Override
-    public int hashCode() {
-        int result = owner != null ? owner.hashCode() : 0;
-        result = 31 * result + (model != null ? model.hashCode() : 0);
-        result = 31 * result + (code != null ? code.hashCode() : 0);
-        result = 31 * result + (created != null ? created.hashCode() : 0);
-        return result;
-    }
+        @Override
+        public int hashCode() {
+            int result = owner != null ? owner.hashCode() : 0;
+            result = 31 * result + (model != null ? model.hashCode() : 0);
+            result = 31 * result + (code != null ? code.hashCode() : 0);
+            result = 31 * result + (created != null ? created.hashCode() : 0);
+            return result;
+        }
 }
 
