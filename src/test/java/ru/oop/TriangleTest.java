@@ -15,6 +15,7 @@ public class TriangleTest {
         double expected = 8;
         assertThat(actual).isCloseTo(expected, offset(0.001));
     }
+
     @Test
     public void when44and44and44() {
         Point a = new Point(4, 4);

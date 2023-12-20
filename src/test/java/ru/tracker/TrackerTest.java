@@ -13,6 +13,7 @@ public class TrackerTest {
         Item result = tracker.findById(item.getId());
         assertThat(result.getName()).isEqualTo(item.getName());
     }
+
     @Test
     public void whenTestFindById() {
         Tracker tracker = new Tracker();
@@ -60,6 +61,4 @@ public class TrackerTest {
         Item[] result = tracker.findByName(second.getName());
         assertThat(result[1].getName()).isEqualTo(second.getName());
     }
-
-
 }
