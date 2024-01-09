@@ -2,6 +2,8 @@ package ru.tracker;
 
 import java.util.Arrays;
 
+import static java.lang.System.*;
+
 public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
@@ -53,5 +55,16 @@ public class Tracker {
             return true;
        }
         return false;
+    }
+    public void delete(int id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            int start = index + 1;
+            int distPos = index;
+            int lenght = size - index - 1;
+            items[size - 1] = null;
+            size--;
+            arraycopy(items, start, items, distPos, lenght);
+        } else out.println("Индекс указан выше чем заданный массив");
     }
 }
