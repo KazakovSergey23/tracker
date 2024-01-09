@@ -59,12 +59,9 @@ public class Tracker {
     public void delete(int id) {
         int index = indexOf(id);
         if (index != -1) {
-            int start = index + 1;
-            int distPos = index;
-            int lenght = size - index - 1;
             items[size - 1] = null;
             size--;
-            arraycopy(items, start, items, distPos, lenght);
-        } else out.println("Индекс указан выше чем заданный массив");
+            arraycopy(items, index + 1, items, index, size - index);
+        }
     }
 }
