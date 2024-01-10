@@ -13,7 +13,7 @@ public class Matches {
             System.out.println(plaer + " Введите число от 1 до 3");
             System.out.println("Осталось палочек: " + count);
             int matches = Integer.parseInt(input.nextLine());
-            if (matches <= 3) {
+            if (matches <= 3 && matches > 0) {
                 count -= matches;
                 turn = !turn;
             }else {
