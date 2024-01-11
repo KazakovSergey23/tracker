@@ -9,14 +9,14 @@ public class Matches {
         boolean turn = true;
         int count = 11;
         while (count > 0) {
-            String plaer = turn ? "Первый игрок" : "Второй игрок";
-            System.out.println(plaer + " Введите число от 1 до 3");
-            System.out.println("Осталось палочек: " + count);
+            String player = turn ? "Первый игрок" : "Второй игрок";
+            System.out.println(player + " Введите число от 1 до 3");
             int matches = Integer.parseInt(input.nextLine());
-            if (matches <= 3 && matches > 0 && matches < count) {
+            if (matches <= 3 && matches > 0 && matches <= count) {
                 count -= matches;
                 turn = !turn;
-            }else {
+                System.out.println("Осталось палочек: " + count);
+            } else {
                 System.out.println("Введите число меньше трех");
             }
         }
