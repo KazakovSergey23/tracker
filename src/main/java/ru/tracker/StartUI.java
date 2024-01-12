@@ -1,7 +1,4 @@
 package ru.tracker;
-
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class StartUI {
