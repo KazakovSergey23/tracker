@@ -102,11 +102,16 @@ public class TrackerTest {
     }
     @Test
     public void whenAddItem() {
-        String[] answer = {"Fix PC"};
+        String[] answer = {"Fix PC", "Fix Bug"};
         Input input = new MockInput(answer);
         Tracker tracker = new Tracker();
         StartUI.createItem(input, tracker);
+        StartUI.createItem(input, tracker);
         Item created = tracker.findAll()[0];
         Item expected = new Item("Fix PC");
-        assertThat(created.getName()).isEqualTo(expected.getName());    }
+        assertThat(created.getName()).isEqualTo(expected.getName());
+        created = tracker.findAll()[1];
+        expected = new Item("Fix Bug");
+        assertThat(created.getName()).isEqualTo(expected.getName());
+    }
 }
