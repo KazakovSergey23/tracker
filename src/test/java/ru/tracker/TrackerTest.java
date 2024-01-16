@@ -100,4 +100,13 @@ public class TrackerTest {
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
     }
+    @Test
+    public void whenAddItem() {
+        String[] answer = {"Fix PC"};
+        Input input = new MockInput(answer);
+        Tracker tracker = new Tracker();
+        StartUI.createItem(input, tracker);
+        Item created = tracker.findAll()[0];
+        Item expected = new Item("Fix PC");
+        assertThat(created.getName()).isEqualTo(expected.getName());    }
 }
