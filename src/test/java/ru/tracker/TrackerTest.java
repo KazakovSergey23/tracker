@@ -114,4 +114,24 @@ public class TrackerTest {
         expected = new Item("Fix Bug");
         assertThat(created.getName()).isEqualTo(expected.getName());
     }
+    @Test
+    public void whenDeleted() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("New Item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId())};
+        StartUI.deleteItem(new MockInput(answers), tracker);
+        Item edited = tracker.findById(item.getId());
+        assertThat(edited).isNull();
+    }
+    @Test
+    public void whenReplaceItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("New Item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId()), "edited item"};
+        StartUI.replaceItem(new MockInput(answers), tracker);
+        Item edited = tracker.findById(item.getId());
+        assertThat(edited.getName()).isEqualTo("edited item");
+    }
 }
