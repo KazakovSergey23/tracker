@@ -83,6 +83,7 @@ public class TrackerTest {
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
         assertThat(result).isFalse();
     }
+
     @Test
     public void whenDeleteItemIsSuccessful() {
         Tracker tracker = new Tracker();
@@ -92,6 +93,7 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(tracker.findById(id)).isNull();
     }
+
     @Test
     public void whenDeleteItemIsNotSuccessful() {
         Tracker tracker = new Tracker();
@@ -100,6 +102,7 @@ public class TrackerTest {
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
     }
+
     @Test
     public void whenAddItem() {
         String[] answer = {"Fix PC", "Fix Bug"};
@@ -114,6 +117,7 @@ public class TrackerTest {
         expected = new Item("Fix Bug");
         assertThat(created.getName()).isEqualTo(expected.getName());
     }
+
     @Test
     public void whenDeleted() {
         Tracker tracker = new Tracker();
@@ -124,6 +128,7 @@ public class TrackerTest {
         Item edited = tracker.findById(item.getId());
         assertThat(edited).isNull();
     }
+
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
