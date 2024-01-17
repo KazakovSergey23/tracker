@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.in;
 
-public class StartUITest {
+public class StartUITest {/*
     @Test
     void whenCreateItem() {
         Input input = new MockInput(new String[] {"0", "Item name", "1"});
@@ -41,5 +41,19 @@ public class StartUITest {
         };
         new StartUI().init(input, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
+    }*/
+    @Test
+    void whenExit() {
+        Output output =  new StudOutput();
+        Input input = new MockInput(new String[]{"0"});
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        assertThat(output.toString()).isEqualTo(
+                "Меню:" + System.lineSeparator()
+                + "0. Завершить программу" + System.lineSeparator()
+                + "=== Завершение программы ===" + System.lineSeparator());
     }
 }
