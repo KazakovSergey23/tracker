@@ -1,9 +1,9 @@
 package ru.tracker;
 
 import ru.tracker.action.*;
+import ru.tracker.input.Input;
 import ru.tracker.output.Console;
 import ru.tracker.output.Output;
-import ru.tracker.input.Input;
 
 public class StartUI {
     private final Output output;
@@ -39,7 +39,8 @@ public class StartUI {
                 new Delete(output),
                 new FindById(output),
                 new FindByName(output),
-                new Exit(output)};
+                new Exit(output)
+        };
         new StartUI(output).init(input, tracker, actions);
     }
 }

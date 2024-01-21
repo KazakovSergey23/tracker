@@ -97,6 +97,7 @@ public class StartUITest {
         Output output = new Stud();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
+        Item two = tracker.add(new Item("test2"));
         Input input = new MockInput(new String[]{"0", "1"});
         UserAction[] actions = new UserAction[]{
                 new FindAll(output),
@@ -110,6 +111,7 @@ public class StartUITest {
                         + "1. Завершить программу" + ln
                         + "=== Вывод всех заявок ===" + ln
                         + one + ln
+                        + two + ln
                         + "Меню: " + ln
                         + "0. Вывод всех заявок" + ln
                         + "1. Завершить программу" + ln
@@ -119,6 +121,31 @@ public class StartUITest {
 
     @Test
     public void whenFindByNameActionItemTestOutputIsSuccesfully() {
+        Output output = new Stud();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+        Input input = new MockInput(new String[]{"0", "test1", "1"});
+        UserAction[] actions = new UserAction[]{
+                new FindByName(output),
+                new Exit(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Меню: " + ln
+                        + "0. Показать заявку по имени" + ln
+                        + "1. Завершить программу" + ln
+                        + "=== Вывод заявок по имени ===" + ln
+                        + one + ln
+                        + "Меню: " + ln
+                        + "0. Показать заявку по имени" + ln
+                        + "1. Завершить программу" + ln
+                        + "=== Завершение программы ===" + ln
+        );
+    }
+
+    @Test
+    public void whenFindByNIdActionItemTestOutputIsSuccesfully() {
         Output output = new Stud();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
