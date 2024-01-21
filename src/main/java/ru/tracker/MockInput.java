@@ -1,5 +1,7 @@
 package ru.tracker;
 
+import ru.tracker.input.Input;
+
 public class MockInput implements Input {
     private String[] answers;
     private int position = 0;
