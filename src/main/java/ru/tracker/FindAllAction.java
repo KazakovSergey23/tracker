@@ -9,7 +9,7 @@ public class FindAllAction implements UserAction {
 
     @Override
     public String name() {
-        return "Показать заявки по имени";
+        return "Вывод всех заявок";
     }
 
     @Override
