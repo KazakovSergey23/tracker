@@ -2,7 +2,7 @@ package ru.ex;
 
 public class Factorial {
     public int calc(int number) {
-        if (number > 0) {
+        if (number < 0) {
             throw new IllegalArgumentException("Факториал отрицательных чисел существовать может существовать");
         }
         int result = 1;
