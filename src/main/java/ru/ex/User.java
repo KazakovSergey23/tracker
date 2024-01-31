@@ -15,6 +15,10 @@ public class User {
         return username;
     }
 
+    public boolean isValid() {
+        return valid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,9 +30,5 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(username, valid);
-    }
-
-    public boolean isValid() {
-        return valid;
     }
 }
