@@ -9,9 +9,7 @@ public class FactorialTest {
     void whenExeption() {
         Factorial factorial = new Factorial();
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () ->
-            factorial.calc(-3)
-                );
-        assertThat(exception.getMessage()).isEqualTo("Факториал отрицательных чисел существовать может существовать");
+                () -> factorial.calc(-3));
+        assertThat(exception.getMessage()).isEqualTo("Факториал отрицательных чисел существовать не может");
     }
 }
