@@ -9,6 +9,9 @@ public class MockInput implements Input {
     public MockInput(String[] answers) {
         this.answers = answers;
     }
+
+    public MockInput() {
+    }
     @Override
     public int askInt(String question) {
         return Integer.parseInt(askStr(question));
