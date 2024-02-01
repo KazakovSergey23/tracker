@@ -169,7 +169,7 @@ public class StartUITest {
         );
     }
     @Test
-    void whenInvalidExit() {
+    public void whenInvalidExit() {
         Output output = new Stud();
         Input input = new MockInput(new String[]{"1", "0"});
         Tracker tracker = new Tracker();
