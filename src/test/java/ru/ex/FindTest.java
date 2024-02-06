@@ -12,7 +12,7 @@ public class FindTest {
         String[] data = {"one", "two", "three"};
         int index = -3;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Find.get(data, index));
-        assertThat(exception.getMessage()).isEqualTo("Index out of  bound");
+        assertThat(exception.getMessage()).isEqualTo("Index out of bound");
     }
 
     @Test
@@ -20,7 +20,7 @@ public class FindTest {
         String[] data = {"one", "two", "three"};
         int index = 10;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Find.get(data, index));
-        assertThat(exception.getMessage()).isEqualTo("Index out of  bound");
+        assertThat(exception.getMessage()).isEqualTo("Index out of bound");
     }
 
     @Test
@@ -28,7 +28,7 @@ public class FindTest {
         String[] data = {"one", "two", "three"};
         int index = 3;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Find.get(data, index));
-        assertThat(exception.getMessage()).isEqualTo("Index out of  bound");
+        assertThat(exception.getMessage()).isEqualTo("Index out of bound");
     }
 
     @Test
