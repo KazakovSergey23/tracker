@@ -46,7 +46,7 @@ public class ValidateInputTest {
         Output output = new Stud();
         Input in = new MockInput(new String[] {"-1"});
         ValidateInput input = new ValidateInput(output, in);
-        int selected = input.askInt("Показать заявку по id");
+        int selected = input.askInt("Удаление заявки");
         assertThat(selected).isEqualTo(-1);
     }
 }
