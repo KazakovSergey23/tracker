@@ -18,7 +18,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    void whenInvalidInputTrue() {
+    void whenValidInputTrue() {
         Output output = new Stud();
         Input in = new MockInput(new String[] {"1"});
         ValidateInput input = new ValidateInput(output, in);
@@ -27,7 +27,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    void whenInvalidInputMulty() {
+    void whenValidInputMulty() {
         Output output = new Stud();
         Input in = new MockInput(new String[] {"1", "2", "3", "4"});
         ValidateInput input = new ValidateInput(output, in);
