@@ -1,6 +1,5 @@
 package ru.tracker;
 
-
 import ru.tracker.input.Input;
 import ru.tracker.output.Output;
 
