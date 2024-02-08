@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FindTest {
     @Test
-    void whenIndexIsNegative(){
+    void whenIndexIsNegative() {
         String[] data = {"one", "two", "three"};
         int index = -3;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Find.get(data, index));
@@ -16,7 +16,7 @@ public class FindTest {
     }
 
     @Test
-    void whenIndexIsGreaterThanArrayLenght(){
+    void whenIndexIsGreaterThanArrayLenght() {
         String[] data = {"one", "two", "three"};
         int index = 10;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Find.get(data, index));
@@ -24,7 +24,7 @@ public class FindTest {
     }
 
     @Test
-    void whenIndexIsEqualsArrayLenght(){
+    void whenIndexIsEqualsArrayLenght() {
         String[] data = {"one", "two", "three"};
         int index = 3;
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Find.get(data, index));
@@ -32,7 +32,7 @@ public class FindTest {
     }
 
     @Test
-    void whenIndexIsCorrect(){
+    void whenIndexIsCorrect() {
         String[] data = {"one", "two", "three"};
         int index = 1;
         String result = Find.get(data, index);
@@ -41,7 +41,7 @@ public class FindTest {
     }
 
     @Test
-    void whenIndexIs0ThenIsCorrect(){
+    void whenIndexIs0ThenIsCorrect() {
         String[] data = {"one", "two", "three"};
         int index = 0;
         String result = Find.get(data, index);
