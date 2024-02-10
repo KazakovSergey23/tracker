@@ -8,7 +8,7 @@ public class FactorialRecursion {
         if (n == 1) {
             return n;
         }
-        return calc(n-1) * n;
+        return calc(n - 1) * n;
     }
 
     public static void main(String[] args) {
