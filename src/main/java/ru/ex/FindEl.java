@@ -7,6 +7,7 @@ public class FindEl {
             if (key != null && key.equals(value[index])) result = index;
         }
         if (result == -1) throw new ElementNotFoundException("Не найден элемент");
+
         return result;
     }
 
