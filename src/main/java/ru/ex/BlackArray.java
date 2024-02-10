@@ -1,6 +1,6 @@
 package ru.ex;
 
-class BlackArray {
+final public class BlackArray {
       public String[] turn(final String[] names) {
         int middle = names.length / 2;
         for (int index = 0; index < middle; index++) {
