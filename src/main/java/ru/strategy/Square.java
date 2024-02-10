@@ -1,7 +1,5 @@
 package ru.strategy;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class Square implements Shape {
 
     @Override
