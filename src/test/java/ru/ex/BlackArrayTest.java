@@ -10,6 +10,7 @@ public class BlackArrayTest {
         String[] expected = {"Vasya", "Nik", "Ivan", "Petr"};
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
     void whenInputArrayHasNotEvenAmountElements() {
         String[] names = {"Petr", "Ivan", "Andrey", "Nik", "Vasya"};

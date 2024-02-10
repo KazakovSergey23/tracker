@@ -168,6 +168,7 @@ public class StartUITest {
                         + "=== Завершение программы ===" + ln
         );
     }
+
     @Test
     public void whenInvalidExit() {
         Output output = new Stud();
