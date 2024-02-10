@@ -9,7 +9,6 @@ public class FindEl {
         if (result == -1) throw new ElementNotFoundException("Не найден элемент");
         return result;
     }
-
     public static void main(String[] args) {
         String[] str = {"Алекс", "Мария", "Катя"};
         try {
