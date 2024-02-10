@@ -11,4 +11,3 @@ final public class BlackArray {
         return names;
     }
 }
-
