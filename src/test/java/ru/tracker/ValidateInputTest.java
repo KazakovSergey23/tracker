@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import ru.tracker.input.Input;
 import ru.tracker.output.Output;
 import ru.tracker.output.Stud;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidateInputTest {
