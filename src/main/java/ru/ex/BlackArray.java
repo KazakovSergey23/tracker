@@ -1,7 +1,7 @@
 package ru.ex;
 
 final public class BlackArray {
-     String[] turn(final String[] names) {
+      public String[] turn(final String[] names) {
         int middle = names.length / 2;
         for (int index = 0; index < middle; index++) {
             String temp = names[index];
