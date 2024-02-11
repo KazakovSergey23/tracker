@@ -36,7 +36,7 @@ public final class SingleTracker {
     }
 
     private int indexOf(int id) {
-        return 1;
+        return 0;
     }
 
     public boolean replace(int id, Item item) {
