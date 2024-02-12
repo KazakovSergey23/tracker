@@ -6,17 +6,16 @@ public class PasswordValidator {
     public static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
 
     public static String validate(String password) {
-        boolean numberLower = false;
-        boolean numberUpper = false;
-        boolean numberSpec = false;
-        boolean numberInt = false;
-
         if (password == null) {
             throw new IllegalArgumentException("Password can't be null");
         }
         if (password.length() < 8 || password.length() > 32) {
             throw new IllegalArgumentException("Password should be lenght [8, 32]");
         }
+        boolean numberLower = false;
+        boolean numberUpper = false;
+        boolean numberSpec = false;
+        boolean numberInt = false;
         char[] str = password.toCharArray();
         for (char character : str) {
             if (isUpperCase(character)) {
@@ -28,7 +27,7 @@ public class PasswordValidator {
             if (isDigit(character)) {
                 numberInt = true;
             }
-            if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
+            if (!isLetterOrDigit(character) && !isWhitespace(character)) {
                 numberSpec = true;
             }
         }
