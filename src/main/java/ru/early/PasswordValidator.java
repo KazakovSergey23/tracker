@@ -8,7 +8,6 @@ public class PasswordValidator {
     public static String validate(String password) {
         int numberLower = 0;
         int numberUpper = 0;
-        int numberFORBIDDEN = 0;
         int numberSpec = 0;
         int numberint = 0;
 
