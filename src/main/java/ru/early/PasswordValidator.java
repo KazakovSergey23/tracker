@@ -6,10 +6,10 @@ public class PasswordValidator {
     public static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
 
     public static String validate(String password) {
-        int numberLower = 0;
-        int numberUpper = 0;
-        int numberSpec = 0;
-        int numberint = 0;
+        boolean numberLower = false;
+        boolean numberUpper = false;
+        boolean numberSpec = false;
+        boolean numberInt = false;
 
         if (password == null) {
             throw new IllegalArgumentException("Password can't be null");
@@ -20,35 +20,35 @@ public class PasswordValidator {
         }
         for (char character : str) {
             if (isUpperCase(character)) {
-                numberUpper += 1;
+                numberUpper = true;
             }
             if (isLowerCase(character)) {
-                numberLower += 1;
+                numberLower = true;
             }
         }
-        if (numberUpper == 0) {
+        if (numberUpper == false) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
 
         }
-        if (numberLower == 0) {
+        if (numberLower == false) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
 
         }
         for (char character : str) {
             if (isDigit(character)) {
-                numberint += 1;
+                numberInt = true;
             }
         }
-        if (numberint == 0) {
+        if (numberInt == false) {
             throw new IllegalArgumentException("Password should contain at least one figure");
 
         }
         for (char character : str) {
             if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
-                numberSpec += 1;
+                numberSpec = true;
             }
         }
-        if (numberSpec == 0) {
+        if (numberSpec == false) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
         for (String string : FORBIDDEN) {
