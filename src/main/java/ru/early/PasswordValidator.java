@@ -26,11 +26,11 @@ public class PasswordValidator {
                 numberLower = true;
             }
         }
-        if (numberUpper == false) {
+        if (!numberUpper) {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
 
         }
-        if (numberLower == false) {
+        if (!numberLower) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
 
         }
@@ -39,7 +39,7 @@ public class PasswordValidator {
                 numberInt = true;
             }
         }
-        if (numberInt == false) {
+        if (!numberInt) {
             throw new IllegalArgumentException("Password should contain at least one figure");
 
         }
@@ -48,7 +48,7 @@ public class PasswordValidator {
                 numberSpec = true;
             }
         }
-        if (numberSpec == false) {
+        if (!numberSpec) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
         for (String string : FORBIDDEN) {
