@@ -38,15 +38,13 @@ public class PasswordValidator {
             if (isDigit(character)) {
                 numberInt = true;
             }
+            if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
+                numberSpec = true;
+            }
         }
         if (!numberInt) {
             throw new IllegalArgumentException("Password should contain at least one figure");
 
-        }
-        for (char character : str) {
-            if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
-                numberSpec = true;
-            }
         }
         if (!numberSpec) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
