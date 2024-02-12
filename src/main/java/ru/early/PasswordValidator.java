@@ -14,16 +14,22 @@ public class PasswordValidator {
         if (password == null) {
             throw new IllegalArgumentException("Password can't be null");
         }
-        char[] str = password.toCharArray();
         if (password.length() < 8 || password.length() > 32) {
             throw new IllegalArgumentException("Password should be lenght [8, 32]");
         }
+        char[] str = password.toCharArray();
         for (char character : str) {
             if (isUpperCase(character)) {
                 numberUpper = true;
             }
             if (isLowerCase(character)) {
                 numberLower = true;
+            }
+            if (isDigit(character)) {
+                numberInt = true;
+            }
+            if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
+                numberSpec = true;
             }
         }
         if (!numberUpper) {
@@ -33,14 +39,6 @@ public class PasswordValidator {
         if (!numberLower) {
             throw new IllegalArgumentException("Password should contain at least one lowercase letter");
 
-        }
-        for (char character : str) {
-            if (isDigit(character)) {
-                numberInt = true;
-            }
-            if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
-                numberSpec = true;
-            }
         }
         if (!numberInt) {
             throw new IllegalArgumentException("Password should contain at least one figure");
