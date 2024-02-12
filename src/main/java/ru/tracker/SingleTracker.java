@@ -1,8 +1,6 @@
 package ru.tracker;
 
 import java.util.Arrays;
-import java.util.Random;
-
 import static java.lang.System.arraycopy;
 
 public final class SingleTracker {
