@@ -1,36 +1,61 @@
 package ru.early;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import static java.lang.Character.*;
 
 public class PasswordValidator {
-    public static final String[] FORBIDDEN = {"qwerty", "12345", "password"};
+    public static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
 
     public static String validate(String password) {
-        String specialChars = "[!@#$,.?!*&(){}']";
-        Pattern pattern = Pattern.compile(specialChars);
-        Matcher matcher = pattern.matcher(password);
+        int numberLower = 0;
+        int numberUpper = 0;
+        int numberFORBIDDEN = 0;
+        int numberSpec = 0;
+        int numberint = 0;
+
         if (password == null) {
-            throw new IllegalArgumentException("");
+            throw new IllegalArgumentException("Password can't be null");
         }
-        if ((password.length() < 8) && (password.length() > 32)) {
-            throw new IllegalArgumentException("");
+        char[] str = password.toCharArray();
+        if (password.length() < 8 || password.length() > 32) {
+            throw new IllegalArgumentException("Password should be lenght [8, 32]");
         }
-        if (!password.toUpperCase().equals(password)) {
-            throw new IllegalArgumentException("");
+        for (char character : str) {
+            if (isUpperCase(character)) {
+                numberUpper += 1;
+            }
+            if (isLowerCase(character)) {
+                numberLower += 1;
+            }
         }
-        if (!password.toLowerCase().equals(password)) {
-            throw new IllegalArgumentException("");
+        if (numberUpper == 0) {
+            throw new IllegalArgumentException("Password should contain at least one uppercase letter");
+
         }
-        if (!matcher.matches()) {
-            throw new IllegalArgumentException("");
+        if (numberLower == 0) {
+            throw new IllegalArgumentException("Password should contain at least one lowercase letter");
+
         }
-        if (password.equalsIgnoreCase("qwerty")
-                || password.equalsIgnoreCase("password")
-                || password.equalsIgnoreCase("12345")
-                || password.equalsIgnoreCase("admin")
-                || password.equalsIgnoreCase("user")) {
-            throw new IllegalArgumentException("");
+        for (char character : str) {
+            if (isDigit(character)) {
+                numberint += 1;
+            }
+        }
+        if (numberint == 0) {
+            throw new IllegalArgumentException("Password should contain at least one figure");
+
+        }
+        for (char character : str) {
+            if (!isDigit(character) && !isWhitespace(character) && !isLetter(character)) {
+                numberSpec += 1;
+            }
+        }
+        if (numberSpec == 0) {
+            throw new IllegalArgumentException("Password should contain at least one special symbol");
+        }
+        for (String string : FORBIDDEN) {
+            if (password.toLowerCase().contains(string)) {
+                    throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
+            }
         }
         return password;
     }
