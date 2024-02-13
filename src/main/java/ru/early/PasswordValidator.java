@@ -18,11 +18,16 @@ public class PasswordValidator {
         boolean numberInt = false;
         char[] str = password.toCharArray();
         for (char character : str) {
-            if (isUpperCase(character) || isLowerCase(character) || isDigit(character)
-                    || (!isLetterOrDigit(character) && !isWhitespace(character))) {
+            if (isUpperCase(character)) {
                 numberUpper = true;
+            }
+            if (isLowerCase(character)) {
                 numberLower = true;
+            }
+            if (isDigit(character)) {
                 numberInt = true;
+            }
+            if (!isLetterOrDigit(character) && !isWhitespace(character)) {
                 numberSpec = true;
             }
             if (isLowerCase(character)) {
@@ -33,6 +38,9 @@ public class PasswordValidator {
             }
             if (!isLetterOrDigit(character) && !isWhitespace(character)) {
                 numberSpec = true;
+            }
+            if (numberUpper && numberLower && numberSpec && numberInt) {
+                break;
             }
         }
         if (!numberUpper) {
