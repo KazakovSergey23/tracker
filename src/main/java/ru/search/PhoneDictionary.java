@@ -1,7 +1,6 @@
 package ru.search;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class PhoneDictionary {

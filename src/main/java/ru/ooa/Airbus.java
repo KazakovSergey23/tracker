@@ -1,7 +1,7 @@
 package ru.ooa;
 
 public final class Airbus extends Aircraft {
-    private final static int COUNT_ENGINE = 2;
+    private final int COUNT_ENGINE = 2;
     private String name;
 
     public Airbus(String name) {
